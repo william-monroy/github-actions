@@ -1,5 +1,8 @@
-name: PR text MSG
-on: [pull_request]
+name: Notification push
+on:
+  push:
+    branches:
+      - master
 jobs:
   text:
     runs-on: ubuntu-latest
@@ -8,8 +11,8 @@ jobs:
       uses: twilio-labs/actions-sms@v1
       with:
         fromPhoneNumber: '+18649993546'
-        toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}
-        message: 'Hello from Twilio'
+        toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}, ${{ secrets.ADMIN2_NUMBER }}
+        message: 'Nueva version en el repositorio'
       env:
         TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
         TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
