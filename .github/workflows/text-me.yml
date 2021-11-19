@@ -7,8 +7,8 @@ jobs:
     - name: 'Sending SMS Notification'
       uses: twilio-labs/actions-sms@v1
       with:
-        fromPhoneNumber: '+1(267)8282212'
-        toPhoneNumber: ${{ secrets.PAGER_NUMBER }}
+        fromPhoneNumber: '+18649993546'
+        toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}
         message: 'Hello from Twilio'
       env:
         TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
