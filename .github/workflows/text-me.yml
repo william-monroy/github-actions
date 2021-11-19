@@ -1,4 +1,4 @@
-name: Notification push
+name: Notification sms - admin_1
 on: [pull_request]
 jobs:
   text:
@@ -8,7 +8,7 @@ jobs:
       uses: twilio-labs/actions-sms@v1
       with:
         fromPhoneNumber: '+18649993546'
-        toPhoneNumber: ${{ secrets.ADMIN2_NUMBER }}
+        toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}
         message: 'Nueva version en el repositorio'
       env:
         TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
