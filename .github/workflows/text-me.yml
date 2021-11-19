@@ -1,2 +1,16 @@
-- name: Twilio SMS
-  uses: twilio-labs/actions-sms@v1
+name: PR text MSG
+on: [pull_request]
+jobs:
+  text:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Sending SMS Notification'
+      uses: twilio-labs/actions-sms@v1
+      with:
+        fromPhoneNumber: '+18649993546'
+        toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}
+        message: 'Hello from Twilio'
+      env:
+        TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+        TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+        TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
