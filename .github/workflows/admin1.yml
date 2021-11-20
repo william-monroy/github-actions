@@ -9,7 +9,7 @@ jobs:
       with:
         fromPhoneNumber: '+18649993546'
         toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}
-        message: 'Hello from Twilio'
+        message: 'Nueva version de la pagina web: https://www.mtter.io/'
       env:
         TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
         TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
