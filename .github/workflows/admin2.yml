@@ -1,4 +1,4 @@
-name: PR text MSG
+name: Notification sms - admin_2
 on: [pull_request]
 jobs:
   text:
@@ -8,8 +8,8 @@ jobs:
       uses: twilio-labs/actions-sms@v1
       with:
         fromPhoneNumber: '+18649993546'
-        toPhoneNumber: ${{ secrets.ADMIN_NUMBER }}
-        message: 'Hello from Twilio'
+        toPhoneNumber: ${{ secrets.ADMIN2_NUMBER }}
+        message: 'Nueva version de la pagina web: https://www.mtter.io/'
       env:
         TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
         TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
